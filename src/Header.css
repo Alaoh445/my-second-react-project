@@ -1,0 +1,35 @@
+.nav-link {
+  font-size: 18px;
+  padding: 8px 0;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #00cc66; 
+  
+}
+
+.nav-link.active {
+  color: #00cc66; 
+}
+
+/* submenu/nested route link normal / hover / active (text color only, no background) */
+.rvs-submenu-link {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  display: block;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+.rvs-submenu-link:hover {
+  color: #00cc66; 
+}
+.rvs-submenu-link.active {
+  color: #00cc66; 
+}
+
+

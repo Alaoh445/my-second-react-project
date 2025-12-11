@@ -1,0 +1,401 @@
+/* In your global CSS (e.g., index.css or App.css) */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Footer link styles */
+.footer-link {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #00cc66;
+}
+
+.footer-link.active {
+  color: #00cc66;
+}
+
+/* RVs submenu hover behavior */
+.rvs-menu:hover .rvs-submenu {
+  display: flex !important; /* Override the inline style */
+}
+
+
+.testimonial-section {
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 200px;
+  background-color: #f5f5f5;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-direction:row;
+  gap: 25rem;
+}
+
+.testimonial-heading {
+  text-align: left;
+  font-size: 25px;
+  padding-left: 120px;
+}
+
+.testimonial-carousel {
+  text-align: center;
+}
+
+.testimonial-slide {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.text {
+  font-size: 25px;
+}
+
+.author {
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 20px;
+}
+
+.stars {
+  margin-top: 0.5rem;
+  font-size: 1.8rem;
+  color: #ccc;
+}
+
+.stars .filled {
+  color: #00cc66;
+}
+
+.navigation {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 25px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #00cc66;
+}
+
+.next-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+/* Gallery container */
+.gallery {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;        /* horizontal scroll */
+  scroll-snap-type: x mandatory;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;           /* hide scrollbar for cleaner look */
+}
+
+/* Each image item */
+.gallery-item {
+  position: relative;
+  flex: 0 0 auto;          /* prevent shrinking */
+  margin-right: 30px;
+  scroll-snap-align: start;
+}
+
+.gallery-item img {
+  width: 400px;            /* big enough to show ~3.5 images */
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay on hover */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 200px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+.linkBase {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.linkBase:hover {
+  color: #00cc66; /* green text on hover */
+}
+
+/* Active (current route) styles */
+.linkBase.active {
+  background: #00cc66;
+  color: black;
+}
+
+/* Keep active link readable on hover */
+.linkBase.active:hover {
+  color: black;
+}
+
+/* RVs section */
+.rvs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 80px; /* spacing between items */
+  margin-top: 100px;
+  padding: 0 100px; 
+}
+
+.rv-card {
+  display: block;              /* make the whole card clickable */
+  text-align: left;
+  text-decoration: none;       /* remove underline */
+  color: inherit;              /* keep text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rvs-grid div {
+  text-align: left;
+}
+
+.rvs-grid img {
+  width: 100%;
+  height: 400px;        /* smaller height */
+  object-fit: cover;
+   transition: transform 0.3s ease;
+}
+
+
+.rv-card:hover {
+  transform: scale(1.05);      /* zoom effect */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.rv-card:hover img {
+  transform: scale(1.1);       /* zoom image slightly more */
+}
+
+.reserve-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;   /* vertically center items in row */
+  gap: 12px;             /* spacing between items */
+  flex-direction: row;   /* default: row for desktop */
+  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+.check-availability-link {
+      text-decoration: none;
+      color: white;
+      background: #00cc66;
+      padding:15px 30px;
+      border-radius: 30%;
+      display:inline-block;
+      margin-top: 0;
+      margin-left:'8px';
+      font-size:'25px';
+}
+
+.check-availability-link:hover {
+  background-color: #002e2e; /* link color changes when hovered */
+}
+
+/* Mobile: stack in one column */
+@media (max-width: 768px) {
+  .rvs-grid {
+    grid-template-columns: 1fr; /* single column */
+     padding: 0 20px;
+     margin-top: 10px;
+     gap: 30px;
+  }
+  .rvs-grid img {
+  width: 100%;
+  height: 200px;        /* smaller height */
+  object-fit: cover;
+}
+
+.rv-card:hover {
+  transform: scale(1);      /* zoom effect */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.rv-card:hover img {
+  transform: scale(1);       /* zoom image slightly more */
+}
+.reserve-container {
+    flex-direction: column;
+    align-items: flex-start; /* or center if you want centered */
+    margin-top: -40px;
+    gap: 0px;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .check-availability-link {
+      text-decoration: none;
+      color: white;
+      background: #00cc66;
+      padding:10px 20px;
+      border-radius: 30%;
+      display:inline-block;
+      margin-top: 0;
+      margin-left:'8px';
+      font-size:'25px';
+}
+}
+
+
+/* Mobile view: column + only 4 images */
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+    overflow-x: hidden;    /* no horizontal scroll on mobile */
+    align-items: center;
+  }
+  .gallery-item {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .gallery-item img {
+    width: 100%;       /* stretch image to full width */
+    height: 300px;      /* keep aspect ratio */
+    object-fit: cover; /* fill screen nicely */
+  }
+
+  .gallery-item:nth-child(n+5) {
+    display: none; /* hide images after the 4th */
+  }
+  .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 140px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .rvs-menu .rvs-submenu {
+    position: static !important;
+    box-shadow: none !important;
+    padding-left: 20px !important;
+  }
+  
+.testimonial-section {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #f5f5f5;
+}
+   .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .testimonial-heading {
+    flex: 1;
+    text-align: center;
+    padding-left: 0px;
+    font-size: 20px;
+  }
+
+  .testimonial-carousel {
+    flex: 2;
+    text-align: center;
+  }
+  .text {
+  font-size: 20px;
+}
+.author {
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 18px;
+}
+.stars {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+}
+
+/* Prevent mobile browsers from zooming small inputs; ensure accessibility */
+input, textarea, select, button {
+  font-size: 16px;
+}
+
+/* Euro Camper Section */
+.EuroCamper {
+   text-decoration: none;
+   padding-left: 10px;
+   color: black;
+   margin-top: -2px;
+}
+.EuroCamper:hover {
+  color: #00cc66;
+}
+@media (max-width: 768px) {
+  .EuroCamper {
+   text-decoration: none;
+   padding-left: 5px;
+   color: black;
+}
+}
+
