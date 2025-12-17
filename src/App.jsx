@@ -14,6 +14,12 @@ import RangerVan from './RangerVAn.jsx'
 import TravelTrailer from './TravelTrailer.jsx'
 import FlyingCloud from './FlyingCloud.jsx'
 import MotorHome from './MotorHome.jsx'
+import SurferParadise from './SurferParadise.jsx'
+import LockdownEscape from './LockdownEscape.jsx'
+import CoastalCamps from './CoastalCamps.jsx'
+import MountainsMeadows from './MountainsMeadows.jsx'
+import DesertTrails from './DesertTrails.jsx'
+import ForestGetaways from './ForestGetaways.jsx'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
@@ -42,6 +48,12 @@ function App() {
           <Route path="/RVs/motorhome" element={<MotorHome />} />
 
           <Route path="/RoadTrips" element={<RoadTrips />} />
+          <Route path="/RoadTrips/surfer-paradise" element={<SurferParadise />} />
+          <Route path="/RoadTrips/lockdown-escape" element={<LockdownEscape />} />
+          <Route path="/RoadTrips/coastal-camps" element={<CoastalCamps />} />
+          <Route path="/RoadTrips/mountains-meadows" element={<MountainsMeadows />} />
+          <Route path="/RoadTrips/desert-trails" element={<DesertTrails />} />
+          <Route path="/RoadTrips/forest-getaways" element={<ForestGetaways />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/About" element={<About />} />
           <Route path="/Check" element={<Check />} />

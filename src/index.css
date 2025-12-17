@@ -399,3 +399,129 @@ input, textarea, select, button {
 }
 }
 
+/* Search bar styles */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-expanded {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 4px;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 200px; /* adjust as needed */
+  padding: 4px;
+}
+
+.search-btn, .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.search-btn:hover, .close-btn:hover {
+  color: #00cc66;
+}
+
+/* Road Trips Page for All post */
+post-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.menu-wrapper {
+  position: relative;
+  margin-left: auto;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.menu-btn:hover {
+  color: #000;
+}
+
+/* SHARE BOX */
+.share-box {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* ICON BUTTONS */
+.share-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  background: #f5f5f5;
+}
+
+.share-icon:hover {
+  transform: scale(1.1);
+}
+
+/* BRAND COLORS */
+.facebook {
+  color: #1877f2;
+}
+
+.twitter {
+  color: #000;
+}
+
+.instagram {
+  color: #e1306c;
+}
+
+.copy {
+  color: #555;
+}
+.Road_trips {
+  text-decoration: none;
+  color: black;
+}
+.Road_trips:hover {
+  color: #00cc66;
+}
+ 
+/* Change title and excerpt color on hover */
+.Road_trips h2,
+.Road_trips p {
+  transition: color 0.18s ease;
+  color: inherit; /* default to parent color */
+}
+.Road_trips:hover h2,
+.Road_trips:hover p,
+.Road_trips h2:hover,
+.Road_trips p:hover {
+  color: #00cc66;
+}
