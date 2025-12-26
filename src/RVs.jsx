@@ -12,7 +12,8 @@ import img17 from './assets/NatureQ/NatureQ18.avif'
 
 
 export default function RVs() {
-
+  // add wrapper class for page-level min-height handling
+  const pageClass = 'rvs-page-wrapper'
   
      const [isMobile, setIsMobile] = useState(false)
   
@@ -51,7 +52,7 @@ export default function RVs() {
 
     Rvsstyle: {
       justifyContent: 'center',
-      alignItem: 'center',
+      alignItems: 'center',
       background: 'rgba(0,10,0,0.5)',
       marginTop: '-27px',
       height: '370px',
@@ -103,7 +104,7 @@ export default function RVs() {
   };
 
   return (
-    <div>
+    <div className={pageClass}>
       <nav style={navStyle}>
         <NavLink to="/RVs/euro-camper" className={({ isActive }) => isActive ? "linkBase active" : "linkBase"}>EuroCamper</NavLink>
         <NavLink to="/RVs/venagon" className={({ isActive }) => isActive ? "linkBase active" : "linkBase"}>Venagon</NavLink>

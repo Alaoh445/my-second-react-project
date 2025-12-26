@@ -32,7 +32,7 @@ function App() {
   }, [])
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100dvh' }}>
       <Header />
       <main style={{ flex: 1, paddingTop: isMobile ? 90 : 0 }}>
         <Routes>

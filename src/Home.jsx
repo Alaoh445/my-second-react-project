@@ -31,7 +31,7 @@ export default function Home() {
       position: 'relative',
       width: '100%',
       overflow: 'hidden',
-      paddingBottom: '250px',
+      paddingBottom: isMobile ? '120px' : '250px',
     },
     content: {
       paddingTop: isMobile ? '50px' : '200px',

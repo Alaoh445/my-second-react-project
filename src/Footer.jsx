@@ -8,6 +8,7 @@ const styles = {
     background: 'white',
     color: 'black',
     padding: '40px 20px 20px',
+    marginTop: 'auto', /* ensure footer stays at bottom inside flex column */
   },
   container: {
     maxWidth: '1200px',
