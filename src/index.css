@@ -620,11 +620,172 @@ post-meta {
   }
 }
 
+/* Page template styles */
+.page-template {
+  display: block;
+}
+.pt-hero {
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+/* Plain hero variant (no image) */
+.pt-hero--plain {
+  height: 220px;
+  background: linear-gradient(180deg, #f6f7f2 0%, #eef2ec 100%);
+  display: flex;
+  align-items: center;
+  color: #1b1b1b;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.pt-hero-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.pt-title { font-size: 42px; margin: 0; color: inherit }
+.pt-subtitle { margin-top: 10px; color: rgba(0,0,0,0.6) }
+
+.pt-content { max-width: 1100px; margin: 40px auto; display: grid; grid-template-columns: 1fr 320px; gap: 32px; padding: 0 20px; }
+.pt-main { background: white; padding: 28px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.pt-aside { background: #fafafa; padding: 18px; border-radius: 8px; }
+.pt-cta { margin-bottom: 20px; }
+.pt-recent ul { list-style: none; padding: 0; margin: 0; }
+.pt-recent li { margin-bottom: 10px; }
+
+.pt-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+.pt-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+
+.pt-lead { font-size: 18px; margin-bottom: 12px; color: #333 }
+
+@media (max-width: 768px) {
+  .pt-hero { height: 300px }
+  .pt-content { grid-template-columns: 1fr; }
+  .pt-gallery { grid-template-columns: 1fr; }
+
+  /* Coastal Camps specific responsive tweaks */
+  .article-body { padding: 18px }
+  /* make inline images full-bleed on mobile */
+  .inline-img { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); border-radius: 0; height: auto; object-fit: cover; margin: 12px 0 }
+}
+
+/* Article + share + comments styling */
+.article-top { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px }
+.article-meta { display:flex; justify-content:space-between; align-items:center; gap:12px; width:100% }
+.all-posts-link { color:#00cc66; text-decoration:none; font-weight:600 }
+.all-posts-link.small { font-size:13px; margin-left:8px }
+
+/* All posts link styles (green + hover) */
+.all-posts-link {
+  color: #00cc66;
+  font-weight: 600;
+  text-decoration: none;
+}
+.all-posts-link:hover { color: #00994d }
+.all-posts-link.small {
+  font-size: 0.9rem;
+  padding: 0; /* plain link */
+  background: transparent;
+  border-radius: 0;
+  border: none;
+}
+.all-posts-icon { margin-right:8px; vertical-align: middle }
+.all-posts-link svg { color: inherit }
+
+/* remove underlines for recent/sidebar links */
+.recent-body a, .pt-recent a, .sidebar-recent a { text-decoration: none }
+
+/* center the lead paragraph for better visual balance */
+.article-body .lead { text-align: center }
+
+/* small hero note */
+.pt-note { margin-top: 8px; color: rgba(0,0,0,0.6); font-size: 14px }
+
+/* Icon/share color rules */
+.icon-btn { color: black; background:#f4f6f5; border: none; padding:10px; border-radius:6px; cursor:pointer; transition: color 0.12s ease, transform 0.12s ease }
+.icon-btn:hover { color: #00cc66; transform: translateY(-2px) }
+.share-icon { color: black }
+.share-icon:hover { color: #00cc66 }
+.copy-msg { color: #00cc66 }
+
+/* Mobile tweaks for top meta and search */
+@media (max-width: 768px) {
+  .article-top { flex-direction: column; align-items: stretch; gap: 10px }
+  .search-bar { width: 100% }
+  .search-bar input { width: 100%; box-sizing: border-box }
+  .pt-hero--plain { height: 160px }
+}
+
+/* Ensure check button and primary CTA don't have underlines */
+.check-availability-link, .btn-primary { text-decoration: none }
+
+/* Recent grid links cleanup */
+.recent-body a { text-decoration: none; color: inherit }
+.search-bar input { width:320px; max-width:100%; padding:8px 12px; border:1px solid #ddd; border-radius:6px }
+.article-body h2 { margin-top: 0 }
+.lead { font-size:18px; color:#333 }
+.inline-img { width:100%; height:260px; object-fit:cover; margin:16px 0; border-radius:6px }
+.share-row { display:flex; gap:8px; align-items:center; margin:12px 0 }
+
+.copy-msg { color:#00994d; margin-left:8px }
+.comments { margin-top: 18px }
+.comment-form input, .comment-form textarea { width:100%; padding:8px; border:1px solid #ddd; border-radius:6px; margin-bottom:8px }
+.comment-list { list-style:none; padding:0; margin:0 }
+.comment-list li { padding:12px; border-radius:6px; border:1px solid rgba(0,0,0,0.06); margin-bottom:8px; cursor:pointer }
+.c-head { display:flex; justify-content:space-between; align-items:center }
+.c-meta { font-size:12px; color:#666; margin-top:6px }
+
+/* Sidebar recent */
+.sidebar-recent { margin-top: 24px }
+.sidebar-recent h5 { display:flex; justify-content:space-between; align-items:center }
+.sidebar-recent ul { list-style:none; padding:0 }
+.sidebar-recent li { margin-bottom:8px }
+
+/* Page template hero alignment (desktop left, mobile center) */
+.pt-hero-inner { text-align: left }
+@media (max-width: 768px) { .pt-hero-inner { text-align: center } }
+
+/* Recent section now shows image thumbnails; default text color is black, hover green */
+.pt-recent-grid { display:flex; flex-direction:column; gap:8px; margin-top:12px }
+.pt-recent-item { display:flex; gap:8px; align-items:center; text-decoration:none; color: black }
+.pt-recent-item img { width:64px; height:48px; object-fit:cover; border-radius:4px }
+.pt-recent-item .pt-recent-title { font-size:14px; }
+.pt-recent-item:hover { color: #00cc66 }
+
+/* Recent posts row (under comments) styles */
+.recent-row { margin-top: 24px }
+.recent-row-items { display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap }
+.recent-row-item { display:flex; gap:12px; align-items:center; text-decoration:none; color: black; padding:8px; border-radius:6px }
+.recent-row-item img { width:140px; height:90px; object-fit:cover; border-radius:6px }
+.recent-row-item .recent-row-title { font-size:14px; font-weight:600 }
+.recent-row-item:hover { color: #00cc66 }
+
+/* Keep legacy sidebar text links black */
+.pt-recent a, .sidebar-recent a { color: black; text-decoration: none }
+.pt-recent a:hover, .sidebar-recent a:hover { color: #00cc66 }
+
+/* Recent grid at bottom of article */
+.recent-grid { display:flex; gap:12px; margin-top:18px; flex-wrap:wrap }
+.recent-card { width: calc(25% - 9px); background: white; border-radius:6px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.recent-card img { width:100%; height:140px; object-fit:cover }
+.recent-body { padding:10px }
+.recent-body a { display:block; font-weight:600; margin-bottom:8px; color: #222 }
+.recent-meta { font-size:12px; color:#666 }
+
+@media (max-width: 768px) {
+  .recent-card { width: 100% }
+}
+
 /* BRAND COLORS */
 .facebook {
   color: #1877f2;
 }
-
 .twitter {
   color: #000;
 }

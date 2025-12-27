@@ -6,13 +6,7 @@ import SearchBar from "./SearchBar.jsx";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLink } from "react-icons/fa";
 
-import img14 from './assets/NatureQ/NatureQ14.avif'
-import img15 from './assets/NatureQ/NatureQ15.avif'
-import img16 from './assets/NatureQ/NatureQ16.avif'
-import img17 from './assets/NatureQ/NatureQ17.avif'
-import img18 from './assets/NatureQ/NatureQ18.avif'
-import img19 from './assets/NatureQ/NatureQ19.avif'
-
+import { posts as roadPosts } from './data/roadTripsData'
 
 
 
@@ -90,14 +84,7 @@ export default function RoadTrips() {
    },
   }
 
-  const posts = [
-  { id: 1, img: img14, imgHeight: 260, imgHeightMobile: 160, cardHeight: 420, cardHeightMobile: 360, path: '/RoadTrips/surfer-paradise', title: "Surfer’s Paradise: Where to Stop for Best Waves", excerpt: "Sufer paradise is an adventurous that every individual can enjoy, it is pure joy and free from the bustling of Human activities...", date: "May 16, 2025", read: "1 min read", views: 256 },
-  { id: 2, img: img15, imgHeight: 460, imgHeightMobile: 200, cardHeight: 520, cardHeightMobile: 380, path: '/RoadTrips/lockdown-escape', title: "Lockdown Escape: Work & Travel From Your RV", excerpt: "Lockdown escape is an adventure that is filled with joyous and endless view of the natural environment. it is pure joy if you are here...", date: "May 16, 2025", read: "3 min read", views: 356 },
-  { id: 3, img: img16, imgHeight: 340, imgHeightMobile: 180, cardHeight: 460, cardHeightMobile: 380, path: '/RoadTrips/coastal-camps', title: "Coastal Camps: Beachfront RV Spots Worth Visiting", excerpt: "Explore coastal camps with sunsets and salty air—perfect for beachside RV stays", date: "May 16, 2025", read: "3 min read", views: 198 },
-  { id: 4, img: img17, imgHeight: 280, imgHeightMobile: 160, cardHeight: 480, cardHeightMobile: 360, path: '/RoadTrips/mountains-meadows', title: "Mountains & Meadows: High Altitude Road Trips", excerpt: "Find serene campsites with clear skies and crisp mornings in the high country. Enjoy the beauty of nature and the freedom of the open road.", date: "May 16, 2025", read: "3 min read", views: 422 },
-  { id: 5, img: img18, imgHeight: 500, imgHeightMobile: 240, cardHeight: 600, cardHeightMobile: 460, path: '/RoadTrips/desert-trails', title: "Desert Trails: Minimalist RV Adventures", excerpt: "Experience quiet deserts and starry nights on minimalist RV routes. Book our Trips today and enjoy a world of adventure, freedom, and comfort!", date: "May 16, 2025", read: "3 min read", views: 289 },
-  { id: 6, img: img19, imgHeight: 320, imgHeightMobile: 160, cardHeight: 410, cardHeightMobile: 360, path: '/RoadTrips/forest-getaways', title: "Forest Getaways: Campsites Among the Pines", excerpt: "Wake to birdsong and scented pines at these forested RV parks. Come and have fun and enjoy the best of adventurous joy full of natural life and free of noise!", date: "May 16, 2025", read: "3 min read", views: 312 }
-  ];
+  const posts = roadPosts;
 
   return (
     <>
