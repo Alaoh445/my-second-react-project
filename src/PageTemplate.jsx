@@ -1,27 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function PageTemplate({ title, subtitle, hero, children, recent = [], heroNote }) {
+export default function PageTemplate({ title, subtitle, hero, children, recent = [], heroNote, heroClass }) {
+  const heroClasses = hero ? `pt-hero ${heroClass || ''}` : `pt-hero pt-hero--plain ${heroClass || ''}`
   return (
     <div className="page-template">
       {/* Hero: use image if provided, otherwise render a clean header */}
-      {hero ? (
-        <section className="pt-hero" style={{ backgroundImage: `url(${hero})` }}>
-          <div className="pt-hero-inner">
-            <h1 className="pt-title">{title}</h1>
-            {subtitle && <p className="pt-subtitle">{subtitle}</p>}
-            {heroNote && <p className="pt-note">{heroNote}</p>}
-          </div>
-        </section>
-      ) : (
-        <section className="pt-hero pt-hero--plain">
-          <div className="pt-hero-inner">
-            <h1 className="pt-title">{title}</h1>
-            {subtitle && <p className="pt-subtitle">{subtitle}</p>}
-            {heroNote && <p className="pt-note">{heroNote}</p>}
-          </div>
-        </section>
-      )} 
+      <section className={heroClasses} style={hero ? { backgroundImage: `url(${hero})` } : undefined}>
+        <div className="pt-hero-inner">
+          <h1 className="pt-title">{title}</h1>
+          {subtitle && <p className="pt-subtitle">{subtitle}</p>}
+          {heroNote && <p className="pt-note">{heroNote}</p>}
+        </div>
+      </section> 
 
       <div className="pt-content">
         <main className="pt-main">{children}</main>

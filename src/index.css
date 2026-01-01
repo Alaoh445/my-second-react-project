@@ -633,6 +633,13 @@ post-meta {
   color: white;
   position: relative;
 }
+/* per-page hero variants */
+.pt-hero--surfer { background-blend-mode: multiply; }
+.pt-hero--lockdown { background-size: cover; background-position: right center; }
+.pt-hero--mountains { background-position: center 30%; }
+.pt-hero--desert { background: linear-gradient(180deg, rgba(255,245,230,0.6), rgba(255,230,200,0.6)); background-blend-mode: multiply; }
+.pt-hero--forest { background-position: center 10%; filter: saturate(1.05) }
+
 /* Plain hero variant (no image) */
 .pt-hero--plain {
   height: 220px;
@@ -651,6 +658,28 @@ post-meta {
 }
 .pt-title { font-size: 42px; margin: 0; color: inherit }
 .pt-subtitle { margin-top: 10px; color: rgba(0,0,0,0.6) }
+
+/* Specific layout helpers */
+.two-col { display:grid; grid-template-columns: 1fr 360px; gap:24px; align-items:start }
+@media (max-width:768px) { .two-col { grid-template-columns: 1fr } }
+.itinerary ol { padding-left: 20px }
+.map-placeholder, .trail-list, .gallery-grid { margin-top: 14px }
+.gallery-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:8px }
+.gallery-grid img { width:100%; height:160px; object-fit:cover }
+@media (max-width:768px) { .gallery-grid { grid-template-columns: 1fr } }
+.trail-list .trail-item { padding: 10px; border-radius:6px; background:#fafafa; margin-bottom:8px }
+.map-placeholder { height:160px; background:linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02)); display:flex; align-items:center; justify-content:center; color:#666; border-radius:6px }
+
+/* small tweak for surfer tips */
+.surfer-tips ul { margin: 0; padding-left: 18px }
+
+/* keep share icons black and green on hover */
+.icon-btn { color: black; background:#f4f6f5; border: none; padding:10px; border-radius:6px; cursor:pointer; transition: color 0.12s ease }
+.icon-btn:hover { color: #00cc66 }
+
+/* comments block spacing */
+.comments-block { margin-top: 12px }
+
 
 .pt-content { max-width: 1100px; margin: 40px auto; display: grid; grid-template-columns: 1fr 320px; gap: 32px; padding: 0 20px; }
 .pt-main { background: white; padding: 28px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
