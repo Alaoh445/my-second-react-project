@@ -97,7 +97,7 @@ export default function Home() {
        width: '100%',
     },
     Roadside2: {
-       backgroundImage: isMobile ? 'none' : `url(${Road})`,
+       backgroundImage: isMobile ? `url(${Road})` : `url(${Road})`,
        backgroundColor: isMobile ? 'black' : 'transparent',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
