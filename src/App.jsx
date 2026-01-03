@@ -20,6 +20,7 @@ import CoastalCamps from './CoastalCamps.jsx'
 import MountainsMeadows from './MountainsMeadows.jsx'
 import DesertTrails from './DesertTrails.jsx'
 import ForestGetaways from './ForestGetaways.jsx'
+import SubscribeConfirm from './SubscribeConfirm.jsx'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
@@ -57,6 +58,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/About" element={<About />} />
           <Route path="/Check" element={<Check />} />
+          <Route path="/subscribe/confirmed" element={<SubscribeConfirm />} />
         </Routes>
       </main>
       <Footer />

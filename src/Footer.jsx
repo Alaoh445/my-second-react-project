@@ -120,6 +120,10 @@ const styles = {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [email, setEmail] = React.useState('')
+  const [loading, setLoading] = React.useState(false)
+  const [message, setMessage] = React.useState('')
+  const [devLink, setDevLink] = React.useState('')
 
   return (
     <footer style={styles.footer}>
@@ -171,8 +175,39 @@ export default function Footer() {
         {/* Newsletter Form */}
         <div style={styles.section}>
           <h3 style={{ margin: 0 }}>Subscribe to Our Newsletter</h3>
-          <form style={styles.form} onSubmit={(e) => e.preventDefault()}>
+          <form style={styles.form} onSubmit={async (e) => {
+              e.preventDefault()
+              if (!/\S+@\S+\.\S+/.test(email)) { setMessage('Please enter a valid email'); return }
+              setLoading(true); setMessage('')
+              try {
+                const res = await fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email }) })
+                const json = await res.json()
+                if (!res.ok) { setMessage(json.error || 'Subscription failed'); setLoading(false); return }
+                if (json.previewUrl) {
+                  // Open Ethereal preview automatically so the user can see the confirmation message
+                  try { window.open(json.previewUrl, '_blank') } catch (e) { console.debug('open preview failed', e) }
+                  setMessage('Preview opened — check the preview and click the confirmation link.')
+                  setDevLink(json.previewUrl)
+                  setEmail('')
+                } else if (json.confirmationUrl) {
+                  // Open confirmation link automatically so the user gets immediate confirmation
+                  try { window.open(json.confirmationUrl, '_blank') } catch (e) { console.debug('open confirmation failed', e) }
+                  setMessage('Confirmation opened in a new tab — you are now subscribed.')
+                  setDevLink(json.confirmationUrl)
+                  setEmail('')
+                } else {
+                  setMessage('Check your email to confirm subscription.')
+                  setDevLink('')
+                  setEmail('')
+                }
+              } catch {
+                setMessage('Network error — try again later')
+              }
+              setLoading(false)
+            }}>
             <input
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               type="email"
               placeholder="Enter your email"
               style={styles.input}
@@ -180,10 +215,11 @@ export default function Footer() {
               title='Newsletter'
               aria-placeholder='Newsletter'
             />
-            <button type="submit" style={styles.button}>
-              Subscribe
+            <button type="submit" style={{ ...styles.button, opacity: loading ? 0.7 : 1 }} disabled={loading}>
+              {loading ? 'Sending…' : 'Subscribe'}
             </button>
           </form>
+          {message && <div style={{ marginTop: 8, color: '#006b37' }}>{message} {devLink && <a href={devLink} target="_blank" rel="noreferrer">Confirm link</a>}</div>}
 
           {/* Social Icons */}
           <div style={styles.social}>

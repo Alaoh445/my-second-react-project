@@ -15,7 +15,7 @@ export default function Comments({ slug }) {
   const [text, setText] = useState('')
 
   useEffect(() => {
-    try { localStorage.setItem(key, JSON.stringify(comments)) } catch {}
+    try { localStorage.setItem(key, JSON.stringify(comments)) } catch (err) { console.debug('localStorage write failed', err) }
   }, [comments, key])
 
   function addComment() {
