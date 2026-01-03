@@ -21,6 +21,7 @@ import MountainsMeadows from './MountainsMeadows.jsx'
 import DesertTrails from './DesertTrails.jsx'
 import ForestGetaways from './ForestGetaways.jsx'
 import SubscribeConfirm from './SubscribeConfirm.jsx'
+import ScrollToTop from './ScrollToTop.jsx'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
@@ -36,6 +37,7 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100dvh' }}>
       <Header />
       <main style={{ flex: 1, paddingTop: isMobile ? 90 : 0 }}>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/RVs" element={<RVs />} />
